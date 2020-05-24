@@ -13,7 +13,10 @@ app.use(cors())
 app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
-app.use('/api/item', router)
+
+app.use('/api/user', userRouter)
+app.use('/api/item', itemRouter)
+app.use('/api/list', listRouter)
 
 export const start = async () => {
   try {
